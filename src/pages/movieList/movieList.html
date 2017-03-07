@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Filme
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+            {{ item }}
+            <button ion-button item-right>
+                <ion-icon name="trash">
+                </ion-icon>
+            </button>
+        </ion-item>
+        <form (ngSubmit)="addEntry()">
+            <ion-item>
+                <ion-input type="text" value="" [(ngModel)]="newInput" name="newInput" placeholder="neuer Film"></ion-input>
+            </ion-item>
+            <button ion-button type="submit" block>hinzufügen</button>
+        </form>
+    </ion-list>
+</ion-content>
+

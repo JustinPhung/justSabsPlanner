@@ -29,4 +29,8 @@ export class MoviePage {
 
     }
 
+    remove(index: number){
+        this.items.splice(index, 1);
+    }
+
 }

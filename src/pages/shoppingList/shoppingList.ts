@@ -28,4 +28,9 @@ export class ShoppingPage {
 
     }
 
+    remove(index: number){
+        this.items.splice(index, 1);
+    }
+
+
 }

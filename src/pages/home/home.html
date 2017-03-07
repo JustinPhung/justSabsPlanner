@@ -41,6 +41,7 @@
             [viewDate]="viewDate"
             [events]="events"
             [refresh]="refresh"
+            (eventClicked)="remove($event.event)"
             (eventTimesChanged)="eventTimesChanged($event)">
     </mwl-calendar-week-view>
 
@@ -89,7 +90,12 @@
         </tr>
         </tbody>
         <tr>
-            <button ion-button type="submit" round (click)="addEvent()"> +</button>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <button ion-button style="float: right;" type="submit" round (click)="addEvent()"> +</button>
+            </td>
         </tr>
     </table>
 

@@ -87,5 +87,15 @@ export class HomePage {
         }
     }
 
+    remove(event:CalendarEvent ){
+        this.events.forEach((rEvent, index)=>{
+            if(rEvent == event){
+                this.events.splice(index, 1);
+            }
+        })
+        this.refresh.next();
+
+    }
+
 
 }

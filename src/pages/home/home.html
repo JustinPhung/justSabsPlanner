@@ -40,7 +40,8 @@
     <mwl-calendar-week-view
             [viewDate]="viewDate"
             [events]="events"
-            [refresh]="refresh">
+            [refresh]="refresh"
+            (eventTimesChanged)="eventTimesChanged($event)">
     </mwl-calendar-week-view>
 
 
@@ -73,10 +74,10 @@
                         [(ngModel)]="event.title">
             </td>
             <td>
-                <select [(ngModel)]="event.color">
-                    <option value="{{colors.yellow}}">gelb</option>
-                    <option value="{{colors.blue}}">blau</option>
-                    <option value="{{colors.red}}">rot</option>
+                <select (change)="changeColor($event)">
+                    <option value="yellow">gelb</option>
+                    <option value="blue">blau</option>
+                    <option value="red">rot</option>
                 </select>
             </td>
             <td>

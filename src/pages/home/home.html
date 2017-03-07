@@ -5,7 +5,40 @@
 </ion-header>
 
 <ion-content padding>
-  <mwl-calendar-month-view
-          [viewDate]="viewDate">
-  </mwl-calendar-month-view>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+                ion-button color="light"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate">
+          Previous
+        </div>
+        <div
+                ion-button
+                mwlCalendarToday
+                [(viewDate)]="viewDate">
+          Today
+        </div>
+        <div
+                ion-button color="light"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate">
+          Next
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+  </div>
+  <mwl-calendar-week-view
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
 </ion-content>
